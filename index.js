@@ -4,7 +4,7 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 const cors = require("cors");
 const ObjectId = require("mongodb").ObjectId;
-const port = 7000;
+const port = process.env.PORT || 7000;
 app.use(cors());
 app.use(express.json());
 
@@ -61,5 +61,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("genius car mecanic", port);
+  console.log("genius car mecanic heroku", port);
 });
